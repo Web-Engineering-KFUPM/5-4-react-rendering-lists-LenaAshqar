@@ -32,7 +32,7 @@ export default function CourseCard({ course, index, onMutateCourse }) {
       <header className="cardHeader">
         <h2>{course.title}</h2>
         {/* 🟩 PART A (Anchor): Show "All caught up" badge when ALL tasks are done (logical &&) */}
-          {course.tasks.length !== 0 && <p>All caught up</p>}
+          {course.tasks.every(task => task.isDone) && <span className="badge">All caught up!</span>}
       </header>
 
 
